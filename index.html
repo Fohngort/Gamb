@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Token Arcade: a game arcade with virtual tokens only." />
+    <title>Token Arcade</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="index.html" aria-label="Token Arcade home">TOKEN<span>ARCADE</span></a>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Donkere modus inschakelen" title="Weergavemodus wijzigen">
+          <span class="theme-icon theme-icon--moon" aria-hidden="true">☾</span>
+          <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+        </button>
+        <span class="auth-status" id="auth-status">Not signed in</span>
+        <button class="login-button" id="login-button" type="button">Sign in</button>
+        <button class="register-button" id="register-button" type="button">Register</button>
+        <div class="balance" aria-label="Current token balance"><span class="coin" aria-hidden="true">✦</span><span id="balance">1,000</span> tokens</div>
+      </div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__content">
+          <p class="eyebrow">Your digital game arcade</p>
+          <h1 id="page-title">Play. Win. <span class="gradient">Just for fun.</span></h1>
+          <p class="intro">Discover quick mini games with virtual tokens. No real money, no payouts — just a colourful place to test your luck.</p>
+          <button class="cta" id="games-button" type="button">Explore games</button>
+        </div>
+        <section class="slots" aria-labelledby="slots-title">
+          <h2 class="slot-top" id="slots-title">✦ LUCKY TOKENS ✦</h2>
+          <div class="reels" aria-label="The three slot reels"><div class="reel" id="r1">🍒</div><div class="reel" id="r2">💎</div><div class="reel" id="r3">⭐</div></div>
+          <div class="slot-bottom"><p id="message">Sign in to play.</p><button class="spin" id="spin-button" type="button" disabled>SPIN — 25 ✦</button></div>
+        </section>
+      </section>
+      <section class="game-overview" id="games" aria-labelledby="games-title">
+        <h2 id="games-title">Choose your challenge</h2>
+        <div class="games">
+          <article class="game"><div class="icon" aria-hidden="true">🎰</div><h3>Lucky Tokens</h3><p>Spin the reels and collect winning combinations.</p><span class="tag">Playable above</span></article>
+          <article class="game"><div class="icon" aria-hidden="true">🃏</div><h3>Card Duel</h3><p>Predict the highest card in a quick round.</p><span class="tag">Coming soon</span></article>
+          <article class="game"><div class="icon" aria-hidden="true">🎯</div><h3>Target Rush</h3><p>Hit the targets and build your token streak.</p><span class="tag">Coming soon</span></article>
+        </div>
+      </section>
+    </main>
+    <dialog class="register-dialog" id="register-dialog" aria-labelledby="register-title">
+      <form class="register-form" id="register-form" method="dialog">
+        <div class="dialog-header"><div><p class="eyebrow">Virtual game arcade</p><h2 id="register-title">Create your account</h2></div><button class="close-button" id="close-dialog" type="button" aria-label="Close registration window">×</button></div>
+        <p class="form-intro">You must be at least 18 years old to create an account.</p>
+        <label for="username">Username</label><input id="username" name="username" type="text" autocomplete="username" minlength="3" maxlength="24" required />
+        <label for="birth-date">Date of birth</label><input id="birth-date" name="birth-date" type="date" autocomplete="bday" required />
+        <label for="password">Password</label><div class="password-field"><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required /><button class="password-toggle" type="button" data-password-target="password" aria-label="Show password" aria-pressed="false">👁</button></div>
+        <label for="password-confirm">Confirm password</label><div class="password-field"><input id="password-confirm" name="password-confirm" type="password" autocomplete="new-password" minlength="8" required /><button class="password-toggle" type="button" data-password-target="password-confirm" aria-label="Show password" aria-pressed="false">👁</button></div>
+        <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
+        <button class="submit-button" type="submit">Create account</button>
+      </form>
+    </dialog>
+    <dialog class="register-dialog" id="login-dialog" aria-labelledby="login-title">
+      <form class="register-form" id="login-form" method="dialog">
+        <div class="dialog-header"><div><p class="eyebrow">Welcome back</p><h2 id="login-title">Sign in</h2></div><button class="close-button" id="close-login-dialog" type="button" aria-label="Close sign-in window">×</button></div>
+        <p class="form-intro">Sign in with your username and password.</p>
+        <label for="login-username">Username</label><input id="login-username" name="login-username" type="text" autocomplete="username" required />
+        <label for="login-password">Password</label><div class="password-field"><input id="login-password" name="login-password" type="password" autocomplete="current-password" required /><button class="password-toggle" type="button" data-password-target="login-password" aria-label="Show password" aria-pressed="false">👁</button></div>
+        <p class="form-message" id="login-message" role="alert" aria-live="polite"></p>
+        <button class="submit-button" type="submit">Sign in</button>
+      </form>
+    </dialog>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
